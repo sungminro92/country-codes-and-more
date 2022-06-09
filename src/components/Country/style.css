@@ -1,6 +1,26 @@
 .country-container {
-    /* margin: 0.5rem; */
-    width: 25%;
-    height: 200px;
+    margin: 0.5rem;
+    width: 150px;
+    height: 100px;
     background-color: bisque;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
+
+.img-overlay {
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+.country-main-text {
+    opacity: 1;
+    font-size: 45px;
+    color: white;
 }

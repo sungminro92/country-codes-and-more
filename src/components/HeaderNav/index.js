@@ -1,17 +1,24 @@
+import { useState, useEffect } from 'react'
 import './style.css'
+import { NavLink } from 'react-router-dom'
 
 const HeaderNav = () => {
+    const [selected, setSelected] = useState('')
+
+    const clickSelect = (e) => {
+        setSelected(e.target.id)
+    }
+
     return (
         <div className="header-nav">
             <ul>
-                <a href='#'><li>country name</li></a>
-                <a><li>code</li></a>
-                <li>currencies</li>
-                <li>currencies</li>
-                <li>population</li>
-                <li>tld</li>
+                <li name="name" >name</li>
+                <li id="code">code</li>
+                <li id="currencies">currencies</li>
+                <li id="population">population</li>
+                <li id="tld">tld</li>
             </ul>
-        </div>
+        </div >
     )
 }
 

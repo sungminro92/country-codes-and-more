@@ -3,8 +3,12 @@ import style from './style.css'
 
 const Countries = ({ countries }) => {
 
-    const displayCountries = countries.map(country => {
-        return <Country name={country.name.common} code={country.cca2} />
+    const displayCountries = countries.sort((a, b) => {
+        var textA = a.cca2.toUpperCase();
+        var textB = b.cca2.toUpperCase();
+        return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+    }).map((country, index) => {
+        return <Country key={index} name={country.name.common} code={country.cca2} />
     })
 
     return (
