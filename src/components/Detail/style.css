@@ -1,0 +1,36 @@
+.detail-page {
+    /* position: absolute; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* z-index: 1; */
+}
+
+.detail-info {
+    /* margin-top: 50%;
+    max-width: 600px;
+    height: 400px;
+    min-width: 300px;
+    margin: 0 auto; */
+    background-color: yellow;
+    z-index: 2;
+    min-width: 450px;
+    max-width: 750px;
+    padding: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.detail-page-bg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    z-index: 1;
+    background: rgba(0, 0, 0, .7);
+    cursor: default;
+}

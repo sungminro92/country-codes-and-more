@@ -3,6 +3,8 @@ import Countries from './components/Countries'
 import HeaderNav from './components/HeaderNav'
 import logo from './logo.svg';
 import './App.css';
+import Detail from './components/Detail'
+import CountriesData from './CountriesData';
 
 const CategoryContext = createContext();
 
@@ -20,25 +22,37 @@ function App() {
   const [loading, setLoading] = useState(true)
   const [category, setCategory] = useState('code')
   const [order, setOrder] = useState(false)
+  const [selectedCountry, setSelectedCountry] = useState("");
+  const [detailPage, setDetailPage] = useState(false);
 
   const clickHandleCategory = (value) => {
     setCategory(value)
     console.log("selected value is:", value)
   }
 
-  function fetchCountries() {
-
+  const handleClickCountry = (value) => {
+    setSelectedCountry(value)
+    setDetailPage(!detailPage);
   }
 
-  useEffect(() => {
-    fetchCountries();
-  }, [])
+  const handleClick = () => {
+    setDetailPage(!detailPage)
+  }
+
+
+  const handleRandomCountry = () => {
+    let randomNum = Math.floor(Math.random() * CountriesData.length)
+    setSelectedCountry(CountriesData[randomNum])
+  }
+
+
 
   return (
     <CategoryContext.Provider value={category} >
       <div className="App">
+        {detailPage ? <Detail country={selectedCountry} handleClick={handleClick} handleRandomCountry={handleRandomCountry} /> : null}
         <HeaderNav clickHandleCategory={clickHandleCategory} />
-        <Countries category={category} order={order} />
+        <Countries category={category} order={order} handleClickCountry={handleClickCountry} />
       </div>
     </CategoryContext.Provider>
   );

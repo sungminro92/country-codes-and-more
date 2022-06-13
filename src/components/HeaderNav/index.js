@@ -15,7 +15,7 @@ const HeaderNav = ({ clickHandleCategory }) => {
                 <li name="name" onClick={() => clickHandleCategory('name')}>name</li>
                 <li id="code" onClick={() => clickHandleCategory('code')}> code</li>
                 <li id="currencies" onClick={() => clickHandleCategory('currencies')}>currencies</li>
-                <li id="population" onClick={() => clickHandleCategory('population')}>population</li>
+                <li id="population" onClick={() => clickHandleCategory('dialCode')}>dial code</li>
                 <li id="tld" onClick={() => clickHandleCategory('tld')}>tld</li>
             </ul>
         </div >

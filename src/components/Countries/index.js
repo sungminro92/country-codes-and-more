@@ -3,7 +3,7 @@ import CountriesData from '../../CountriesData'
 import Country from '../Country'
 import style from './style.css'
 
-const Countries = ({ countries, category, order }) => {
+const Countries = ({ handleClickCountry, category, order }) => {
 
     const [c, setC] = useState("name");
 
@@ -27,20 +27,23 @@ const Countries = ({ countries, category, order }) => {
                 var textB = b.currency.toUpperCase();
                 return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
             case 'tld':
-                var textA = a.countryName.toUpperCase();
-                var textB = b.countryName.toUpperCase(); return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
-
+                var textA = a.tld.toUpperCase();
+                var textB = b.tld.toUpperCase(); return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+            case 'dialCode':
+                return b[0] - a[0]
         }
     }).map((country, index) => {
         switch (category) {
             case 'name':
-                return <Country category={category} key={index} code={country.code2} data={country.countryName} />
+                return <Country category={category} key={index} country={country} data={country.countryName} tld={false} handleClickCountry={handleClickCountry} />
             case 'code':
-                return <Country category={category} key={index} code={country.code2} data={country.code2} />
+                return <Country category={category} key={index} country={country} data={country.code2} tld={false} handleClickCountry={handleClickCountry} />
             case 'currencies':
-                return <Country category={category} key={index} code={country.code2} data={country.currency} tld={false} />
+                return <Country category={category} key={index} country={country} data={country.currency} tld={false} handleClickCountry={handleClickCountry} />
             case 'tld':
-                return <Country category={category} key={index} code={country.code2} data={country.tld} tld={true} />
+                return <Country category={category} key={index} country={country} data={country.tld} tld={true} handleClickCountry={handleClickCountry} />
+            case 'dialCode':
+                return <Country category={category} key={index} country={country} data={country.phoneCode[0]} tld={false} handleClickCountry={handleClickCountry} />
         }
     })
 
