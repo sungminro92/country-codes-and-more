@@ -16,11 +16,19 @@
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.5);
-
-}
-
-.country-main-text {
-    opacity: 1;
-    font-size: 45px;
     color: white;
+    font-size: 25px;
+    text-align: center;
 }
+
+.img-overlay:hover {
+    color: black;
+    background-color: rgba(0, 0, 0, 0.0);
+}
+
+/* .country-main-text {
+    text-align: center;
+    opacity: 1;
+    color: white;
+    margin: 0;
+} */

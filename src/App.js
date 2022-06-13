@@ -1,24 +1,32 @@
-import { useEffect, useState } from 'react'
+import { createContext, useContext, useEffect, useState } from 'react'
 import Countries from './components/Countries'
 import HeaderNav from './components/HeaderNav'
 import logo from './logo.svg';
 import './App.css';
 
+const CategoryContext = createContext();
+
 function App() {
+
+  const options = {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Key': '61b46edaf2msh44929b4a81a5256p1d70a5jsna6abc9312f65',
+      'X-RapidAPI-Host': 'ajayakv-rest-countries-v1.p.rapidapi.com'
+    }
+  };
 
   const [allCountries, setAllCountries] = useState("");
   const [loading, setLoading] = useState(true)
+  const [category, setCategory] = useState('code')
+  const [order, setOrder] = useState(false)
 
-  async function fetchCountries() {
-    try {
-      let res = await fetch("https://restcountries.com/v3.1/all")
-      let json = await res.json()
-      console.log(json);
-      setAllCountries(json)
-      setLoading(false)
-    } catch (err) {
-      console.log(err)
-    }
+  const clickHandleCategory = (value) => {
+    setCategory(value)
+    console.log("selected value is:", value)
+  }
+
+  function fetchCountries() {
 
   }
 
@@ -27,10 +35,12 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
-      <HeaderNav />
-      {!loading ? <Countries countries={allCountries} /> : <p>loading...</p>}
-    </div>
+    <CategoryContext.Provider value={category} >
+      <div className="App">
+        <HeaderNav clickHandleCategory={clickHandleCategory} />
+        <Countries category={category} order={order} />
+      </div>
+    </CategoryContext.Provider>
   );
 }
 

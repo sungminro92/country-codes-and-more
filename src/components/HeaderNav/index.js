@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import './style.css'
 import { NavLink } from 'react-router-dom'
 
-const HeaderNav = () => {
+const HeaderNav = ({ clickHandleCategory }) => {
     const [selected, setSelected] = useState('')
 
     const clickSelect = (e) => {
@@ -12,11 +12,11 @@ const HeaderNav = () => {
     return (
         <div className="header-nav">
             <ul>
-                <li name="name" >name</li>
-                <li id="code">code</li>
-                <li id="currencies">currencies</li>
-                <li id="population">population</li>
-                <li id="tld">tld</li>
+                <li name="name" onClick={() => clickHandleCategory('name')}>name</li>
+                <li id="code" onClick={() => clickHandleCategory('code')}> code</li>
+                <li id="currencies" onClick={() => clickHandleCategory('currencies')}>currencies</li>
+                <li id="population" onClick={() => clickHandleCategory('population')}>population</li>
+                <li id="tld" onClick={() => clickHandleCategory('tld')}>tld</li>
             </ul>
         </div >
     )
