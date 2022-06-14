@@ -5,6 +5,7 @@ import logo from './logo.svg';
 import './App.css';
 import Detail from './components/Detail'
 import CountriesData from './CountriesData';
+import { IconContext } from "react-icons";
 
 const CategoryContext = createContext();
 
@@ -24,36 +25,42 @@ function App() {
   const [order, setOrder] = useState(false)
   const [selectedCountry, setSelectedCountry] = useState("");
   const [detailPage, setDetailPage] = useState(false);
+  const [flagUrl, setFlagUrl] = useState("")
 
   const clickHandleCategory = (value) => {
     setCategory(value)
     console.log("selected value is:", value)
   }
 
-  const handleClickCountry = (value) => {
-    setSelectedCountry(value)
+  const handleClickCountry = (country, flagUrl) => {
     setDetailPage(!detailPage);
+    setSelectedCountry(country)
+    setFlagUrl(flagUrl)
   }
 
-  const handleClick = () => {
+  const toggleDetailPage = () => {
     setDetailPage(!detailPage)
   }
 
 
   const handleRandomCountry = () => {
     let randomNum = Math.floor(Math.random() * CountriesData.length)
-    setSelectedCountry(CountriesData[randomNum])
+    let randomCountry = CountriesData[randomNum];
+    setSelectedCountry(randomCountry)
+    setFlagUrl(`https://countryflagsapi.com/png/${randomCountry.code2}`)
   }
 
 
 
   return (
     <CategoryContext.Provider value={category} >
-      <div className="App">
-        {detailPage ? <Detail country={selectedCountry} handleClick={handleClick} handleRandomCountry={handleRandomCountry} /> : null}
-        <HeaderNav clickHandleCategory={clickHandleCategory} />
-        <Countries category={category} order={order} handleClickCountry={handleClickCountry} />
-      </div>
+      <IconContext.Provider value={{ color: "white", className: "react-icons-all" }}>
+        <div className="App">
+          {detailPage ? <Detail flag={flagUrl} country={selectedCountry} toggleDetailPage={toggleDetailPage} handleRandomCountry={handleRandomCountry} /> : null}
+          <HeaderNav clickHandleCategory={clickHandleCategory} />
+          <Countries category={category} order={order} handleClickCountry={handleClickCountry} />
+        </div>
+      </IconContext.Provider>
     </CategoryContext.Provider>
   );
 }

@@ -6,23 +6,63 @@
     width: 100%;
     height: 100%;
     /* z-index: 1; */
+    /* background-size: cover;
+    background-image: url("https://giphy.com/embed/Iau8PEehqA4Bj6yk4v"); */
+}
+
+.detail-page-gif {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    z-index: 1;
+    /* background-image: url("https://giphy.com/embed/Iau8PEehqA4Bj6yk4v"); */
+    /* background-size: cover; */
+    /* background: rgba(0, 0, 0, .7); */
+    cursor: default;
 }
 
 .detail-info {
-    /* margin-top: 50%;
-    max-width: 600px;
-    height: 400px;
-    min-width: 300px;
-    margin: 0 auto; */
-    background-color: yellow;
-    z-index: 2;
-    min-width: 450px;
-    max-width: 750px;
-    padding: 50px;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+    min-width: 400px;
+    max-width: 800px;
+    height: auto;
+    padding: 40px;
     position: absolute;
     top: 50%;
     left: 50%;
+    z-index: 2;
     transform: translate(-50%, -50%);
+}
+
+.detail-info p {
+    margin: 0.5rem;
+}
+
+.detail-info img {
+    width: 200px;
+    height: auto;
+    margin: 1rem;
+}
+
+.detail-page-random {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+}
+
+.detail-page-close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
 }
 
 .detail-page-bg {
@@ -31,6 +71,8 @@
     display: block;
     position: absolute;
     z-index: 1;
-    background: rgba(0, 0, 0, .7);
+    /* background-image: url("https://giphy.com/embed/Iau8PEehqA4Bj6yk4v"); */
+    /* background-size: cover; */
+    background: rgba(0, 0, 0, .6);
     cursor: default;
 }

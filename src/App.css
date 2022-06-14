@@ -1,3 +1,23 @@
 .pointer {
   cursor: pointer
 }
+
+.main-font {
+  font-family: 'Archivo Black', sans-serif;
+}
+
+.sub-font {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.big-font {
+  font-size: 40px;
+}
+
+.medium-font {
+  font-size: 30px;
+}
+
+.small-font {
+  font-size: 18px;
+}

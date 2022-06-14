@@ -8,16 +8,16 @@ const Country = ({ data, country, tld, handleClickCountry }) => {
 
     const [displayText, setDisplayText] = useState("")
 
+    let url = `https://countryflagsapi.com/png/${country.code2}`
     let style = {
-        backgroundImage: `url("https://countryflagsapi.com/png/${country.code2}")`
+        backgroundImage: `url(${url})`
     }
-
 
     // console.log("data on country", data)
     return (
-        <div className="country-container" style={style} >
+        <div className="country-container" style={style} onClick={() => handleClickCountry(country, url)}>
             {/* <div className="img-overlay pointer" onMouseEnter={(e) => onMouseEnter(e)} onMouseLeave={(e) => onMouseLeave(e)}> */}
-            <div className="img-overlay pointer" onClick={() => handleClickCountry(country)}>
+            <div className="img-overlay pointer" >
                 {tld ? `.${data}` : data}
             </div>
         </div >
