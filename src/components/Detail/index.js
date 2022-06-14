@@ -22,13 +22,12 @@ const Detail = ({ flag, country, toggleDetailPage, handleRandomCountry }) => {
         let json = await res.json();
         console.log(json.data.embed_url)
         setimgUrl(json.data.images.original.url)
-
     }
 
     useEffect(() => {
         // elementVariable.current
         fetchGiphy();
-    }, [])
+    }, [country])
 
     // let style = {
     //     backgroundImage: `url(${imgUrl})`
@@ -50,8 +49,8 @@ const Detail = ({ flag, country, toggleDetailPage, handleRandomCountry }) => {
                 <img src={flag} alt={flag} />
                 <p className="main-font big-font" >{country.countryName.toUpperCase()}</p>
                 <p className="sub-font medium-font">{country.code2} / {country.code3}</p>
-                <p>Currency: {country.currency}</p>
-                <p>This country has {country.phoneUsers}</p>
+                <p className="sub-font small-font">Currency: {country.currency}</p>
+                <p className="sub-font small-font">This country has {country.phoneUsers}</p>
             </div>
         </div >
     )
