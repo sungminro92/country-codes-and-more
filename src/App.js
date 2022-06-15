@@ -20,7 +20,7 @@ function App() {
 
   const [allCountries, setAllCountries] = useState("");
   const [loading, setLoading] = useState(true)
-  const [category, setCategory] = useState('code')
+  const [category, setCategory] = useState('code2')
   const [order, setOrder] = useState(false)
   const [selectedCountry, setSelectedCountry] = useState("");
   const [detailPage, setDetailPage] = useState(false);

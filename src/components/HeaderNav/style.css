@@ -2,22 +2,32 @@
     margin: 0;
     width: 100%;
     height: 50px;
-    background-color: aquamarine;
+    background-color: #020100;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
 .header-nav ul {
     text-align: center;
     padding: 0;
+    margin-left: 0.5rem;
 }
 
 .header-nav li {
     list-style: none;
     display: inline;
-    margin: 1rem;
-    cursor: pointer
+    margin: 0.5rem;
+    cursor: pointer;
+    color: #FDFFFC
+}
+
+#about {
+    color: #F1D302
+}
+
+.header-nav li:hover {
+    border-bottom: 2px solid white;
 }
 
 .country-overlay {
@@ -34,5 +44,25 @@
 
 .search-input {
     width: 33%;
-    height: 50%;
+    height: 75%;
+    /* display: inline; */
+    background-color: #E7ECEF;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    min-width: 300px;
+    margin-right: 0.5rem;
+}
+
+.search-input input {
+    margin: 0px 0px 0px 5px;
+    padding: 0px;
+    height: 80%;
+    width: 90%;
+    background-color: white;
+    outline: none;
+    border: none;
+    border-radius: 5px;
 }

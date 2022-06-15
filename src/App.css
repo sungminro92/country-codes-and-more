@@ -10,8 +10,17 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+.bolder-font {
+  font-weight: bolder;
+}
+
+
+.huge-font {
+  font-size: 60px;
+}
+
 .big-font {
-  font-size: 40px;
+  font-size: 45px;
 }
 
 .medium-font {
@@ -19,7 +28,7 @@
 }
 
 .small-font {
-  font-size: 18px;
+  font-size: 20px;
 }
 
 /* PALETTE 1 */
