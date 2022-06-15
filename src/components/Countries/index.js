@@ -34,7 +34,7 @@ const Countries = ({ handleClickCountry, category, order }) => {
         }
     }).filter((country) => {
         if (data.inputVal) {
-            return country.code2.toUpperCase().includes(data.inputVal.toUpperCase()) || country.countryName.toUpperCase().includes(data.inputVal.toUpperCase())
+            return country.code2.toUpperCase().includes(data.inputVal.toUpperCase()) || country.countryName.toUpperCase().includes(data.inputVal.toUpperCase()) || country.tld.toUpperCase().includes(data.inputVal.toUpperCase())
         } else {
             return country
         }

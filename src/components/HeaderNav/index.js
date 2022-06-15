@@ -1,21 +1,21 @@
 import { useState, useEffect, useContext } from 'react'
 import './style.css'
-import { NavLink } from 'react-router-dom'
+// import { NavLink } from 'react-router-dom'
 import { DataContext } from '../../App'
 
 const HeaderNav = ({ clickHandleCategory, handleChangeInput }) => {
     const data = useContext(DataContext)
 
-    const [selected, setSelected] = useState('')
-    const [input, setInput] = useState('')
+    // const [selected, setSelected] = useState('')
+    // const [input, setInput] = useState('')
 
-    const handleInput = (e) => {
-        setInput(e.target.value)
-        handleChangeInput(e.target.value)
-    }
-    const clickSelect = (e) => {
-        setSelected(e.target.id)
-    }
+    // const handleInput = (e) => {
+    //     setInput(e.target.value)
+    //     handleChangeInput(e.target.value)
+    // }
+    // const clickSelect = (e) => {
+    //     setSelected(e.target.id)
+    // }
 
 
 
