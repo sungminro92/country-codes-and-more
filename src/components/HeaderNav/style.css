@@ -5,10 +5,10 @@
     background-color: aquamarine;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .header-nav ul {
-
     text-align: center;
     padding: 0;
 }
@@ -31,3 +31,8 @@
 }
 
 .selected-nav {}
+
+.search-input {
+    width: 33%;
+    height: 50%;
+}

@@ -1,6 +1,6 @@
 .country-container {
     /* margin: 0.5rem; */
-    width: 20%;
+    width: 14.28%;
     height: 200px;
     background-color: bisque;
     background-size: cover;
@@ -9,10 +9,15 @@
     background-position-y: center;
 }
 
+@media screen and (max-width: 1800px) {
+    .country-container {
+        width: 20%;
+    }
+}
+
 @media screen and (max-width: 1400px) {
     .country-container {
         width: 25%;
-        /* height: 175px; */
     }
 }
 

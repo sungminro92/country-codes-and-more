@@ -7,10 +7,9 @@ import Detail from './components/Detail'
 import CountriesData from './CountriesData';
 import { IconContext } from "react-icons";
 
-const CategoryContext = createContext();
+export const DataContext = createContext();
 
 function App() {
-
   const options = {
     method: 'GET',
     headers: {
@@ -26,6 +25,11 @@ function App() {
   const [selectedCountry, setSelectedCountry] = useState("");
   const [detailPage, setDetailPage] = useState(false);
   const [flagUrl, setFlagUrl] = useState("")
+  const [inputVal, setInputVal] = useState("")
+
+  const handleChangeInput = (value) => {
+    setInputVal(value);
+  }
 
   const clickHandleCategory = (value) => {
     setCategory(value)
@@ -42,7 +46,10 @@ function App() {
     setDetailPage(!detailPage)
   }
 
-
+  const data = {
+    category,
+    inputVal,
+  }
   const handleRandomCountry = () => {
     let randomNum = Math.floor(Math.random() * CountriesData.length)
     let randomCountry = CountriesData[randomNum];
@@ -50,18 +57,16 @@ function App() {
     setFlagUrl(`https://countryflagsapi.com/png/${randomCountry.code2}`)
   }
 
-
-
   return (
-    <CategoryContext.Provider value={category} >
+    <DataContext.Provider value={data} >
       <IconContext.Provider value={{ color: "white", className: "react-icons-all" }}>
         <div className="App">
           {detailPage ? <Detail flag={flagUrl} country={selectedCountry} toggleDetailPage={toggleDetailPage} handleRandomCountry={handleRandomCountry} /> : null}
-          <HeaderNav clickHandleCategory={clickHandleCategory} />
+          <HeaderNav handleChangeInput={handleChangeInput} clickHandleCategory={clickHandleCategory} />
           <Countries category={category} order={order} handleClickCountry={handleClickCountry} />
         </div>
       </IconContext.Provider>
-    </CategoryContext.Provider>
+    </DataContext.Provider>
   );
 }
 

@@ -4,7 +4,6 @@ import CategoryContext from '../../App'
 import './style.css'
 
 const Country = ({ data, country, tld, handleClickCountry }) => {
-    // const category = useContext(CategoryContext)
 
     const [displayText, setDisplayText] = useState("")
 
