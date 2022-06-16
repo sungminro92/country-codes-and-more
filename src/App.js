@@ -6,17 +6,13 @@ import './App.css';
 import Detail from './components/Detail'
 import CountriesData from './CountriesData';
 import { IconContext } from "react-icons";
+import About from './components/About'
+
 
 export const DataContext = createContext();
 
 function App() {
-  const options = {
-    method: 'GET',
-    headers: {
-      'X-RapidAPI-Key': '61b46edaf2msh44929b4a81a5256p1d70a5jsna6abc9312f65',
-      'X-RapidAPI-Host': 'ajayakv-rest-countries-v1.p.rapidapi.com'
-    }
-  };
+
 
   const [allCountries, setAllCountries] = useState("");
   const [loading, setLoading] = useState(true)
@@ -24,8 +20,21 @@ function App() {
   const [order, setOrder] = useState(false)
   const [selectedCountry, setSelectedCountry] = useState("");
   const [detailPage, setDetailPage] = useState(false);
+  const [aboutPage, setAboutPage] = useState(false);
   const [flagUrl, setFlagUrl] = useState("")
   const [inputVal, setInputVal] = useState("")
+  const [width, setWindowWidth] = useState(0);
+  useEffect(() => {
+    updateDimensions();
+
+    window.addEventListener("resize", updateDimensions);
+    return () => window.removeEventListener("resize", updateDimensions);
+  }, []);
+
+  const updateDimensions = () => {
+    const width = window.innerWidth;
+    setWindowWidth(width);
+  };
 
   const handleChangeInput = (value) => {
     setInputVal(value);
@@ -46,9 +55,15 @@ function App() {
     setDetailPage(!detailPage)
   }
 
+  const toggleAboutPage = () => {
+    console.log(aboutPage)
+    setAboutPage(!aboutPage)
+  }
+
   const data = {
     category,
     inputVal,
+    width
   }
   const handleRandomCountry = () => {
     let randomNum = Math.floor(Math.random() * CountriesData.length)
@@ -62,7 +77,8 @@ function App() {
       <IconContext.Provider value={{ color: "white", className: "react-icons-all" }}>
         <div className="App">
           {detailPage ? <Detail flag={flagUrl} country={selectedCountry} toggleDetailPage={toggleDetailPage} handleRandomCountry={handleRandomCountry} /> : null}
-          <HeaderNav handleChangeInput={handleChangeInput} clickHandleCategory={clickHandleCategory} />
+          {aboutPage ? <About toggleAboutPage={toggleAboutPage} /> : null}
+          <HeaderNav handleChangeInput={handleChangeInput} clickHandleCategory={clickHandleCategory} toggleAboutPage={toggleAboutPage} />
           <Countries category={category} order={order} handleClickCountry={handleClickCountry} />
         </div>
       </IconContext.Provider>

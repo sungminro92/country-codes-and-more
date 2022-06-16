@@ -4,7 +4,7 @@ import './style.css'
 import { DataContext } from '../../App'
 import { MdClear } from 'react-icons/md'
 
-const HeaderNav = ({ clickHandleCategory, handleChangeInput }) => {
+const HeaderNav = ({ clickHandleCategory, handleChangeInput, toggleAboutPage }) => {
     const data = useContext(DataContext)
 
     // const [selected, setSelected] = useState('')
@@ -28,7 +28,7 @@ const HeaderNav = ({ clickHandleCategory, handleChangeInput }) => {
                 {/* <li id="currencies" onClick={() => clickHandleCategory('currencies')}>currencies</li>
                 <li id="population" onClick={() => clickHandleCategory('dialCode')}>dial code</li> */}
                 <li id="tld" onClick={() => clickHandleCategory('code3')}>ALPHA-3</li>
-                <li id="about" onClick={() => clickHandleCategory('about')}>ABOUT</li>
+                <li id="about" onClick={() => toggleAboutPage()}>ABOUT</li>
             </ul>
             <div className="search-input">
                 <input placeholder="search for country name or code" value={data.inputVal} onChange={(e) => handleChangeInput(e.target.value)} />

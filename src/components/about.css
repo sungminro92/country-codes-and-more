@@ -1,0 +1,27 @@
+.about-page {
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("https://giphy.com/quEsMOrr3hmQ8")
+}
+
+.about-page img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    z-index: 1;
+    cursor: default;
+}
+
+.about-page-overlay {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    z-index: 1;
+    background: rgba(0, 0, 0, .7);
+    cursor: default;
+}

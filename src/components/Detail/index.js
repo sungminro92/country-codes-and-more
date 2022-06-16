@@ -51,12 +51,6 @@ const Detail = ({ flag, country, toggleDetailPage, handleRandomCountry }) => {
 
     }, [country])
 
-    // let style = {
-    //     backgroundImage: `url(${imgUrl})`
-    // }
-
-    // <iframe src="" width="480" height="266" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/cbs-the-bold-and-beautiful-xT0xekS5hYF2Xq5RkY">via GIPHY</a></p>
-    // < iframe src = "https://giphy.com/embed/3ohc1gQr7fjsdERlgk" width = "480" height = "266" frameBorder = "0" class="giphy-embed" allowFullScreen ></iframe > <p><a href="https://giphy.com/gifs/cbs-the-bold-and-beautiful-3ohc1gQr7fjsdERlgk">via GIPHY</a></p>
 
     return (
         <div className="detail-page">
