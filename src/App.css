@@ -56,3 +56,12 @@
 /* #FDFFFC white */
 /* #F1D302 yellow */
 /* #020100 black */
+
+
+html {
+  background-color: #0D3B66;
+}
+
+.App {
+  height: auto;
+}
