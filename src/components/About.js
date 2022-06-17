@@ -36,7 +36,6 @@ const About = ({ toggleAboutPage }) => {
                     <a href="https://www.countryflagsapi.com/"><p>Country Flags API</p></a>
                 </div>
             </div>
-
         </div >
     )
 }

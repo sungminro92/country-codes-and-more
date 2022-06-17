@@ -6,17 +6,12 @@ import { DataContext } from '../../App'
 
 const Countries = ({ handleClickCountry, category, order }) => {
     const data = useContext(DataContext);
-    const [c, setC] = useState("name");
+    const [c, setC] = useState("");
     const [countries, setCountries] = useState(CountriesData)
 
     useEffect(() => {
         setC(category);
-        console.log("changed category", category)
     }, [category])
-
-    useEffect(() => {
-
-    })
 
     console.log("some data?", data.inputVal)
 
@@ -29,8 +24,8 @@ const Countries = ({ handleClickCountry, category, order }) => {
             case 'code3':
                 var textA = a.code3.toUpperCase();
                 var textB = b.code3.toUpperCase(); return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
-            case 'dialcode':
-                return a.phoneCode[0] - b.phoneCode[0]
+            // case 'dialcode':
+            //     return a.phoneCode[0] - b.phoneCode[0]
         }
     }).filter((country) => {
         if (data.inputVal) {
@@ -48,8 +43,6 @@ const Countries = ({ handleClickCountry, category, order }) => {
                 return <Country category={category} key={index} country={country} data={country.phoneCode[0]} handleClickCountry={handleClickCountry} />
         }
     })
-
-
 
     return (
         <div className="countries-container">

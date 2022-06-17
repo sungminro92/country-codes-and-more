@@ -1,19 +1,15 @@
-import { createContext, useContext, useEffect, useState } from 'react'
+import { createContext, useEffect, useState } from 'react'
 import Countries from './components/Countries'
 import HeaderNav from './components/HeaderNav'
-import logo from './logo.svg';
 import './App.css';
 import Detail from './components/Detail'
 import CountriesData from './CountriesData';
 import { IconContext } from "react-icons";
 import About from './components/About'
 
-
 export const DataContext = createContext();
 
 function App() {
-
-
   const [allCountries, setAllCountries] = useState("");
   const [loading, setLoading] = useState(true)
   const [category, setCategory] = useState('code2')
