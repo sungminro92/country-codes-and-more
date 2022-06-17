@@ -29,7 +29,7 @@ const Countries = ({ handleClickCountry, category, order }) => {
             case 'code3':
                 var textA = a.code3.toUpperCase();
                 var textB = b.code3.toUpperCase(); return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
-            case 'dialCode':
+            case 'dialcode':
                 return a.phoneCode[0] - b.phoneCode[0]
         }
     }).filter((country) => {
@@ -44,7 +44,7 @@ const Countries = ({ handleClickCountry, category, order }) => {
                 return <Country category={category} key={index} country={country} data={country.code2} handleClickCountry={handleClickCountry} />
             case 'code3':
                 return <Country category={category} key={index} country={country} data={country.code3} handleClickCountry={handleClickCountry} />
-            case 'dialCode':
+            case 'dialcode':
                 return <Country category={category} key={index} country={country} data={country.phoneCode[0]} handleClickCountry={handleClickCountry} />
         }
     })

@@ -1,6 +1,6 @@
 .about-page {
-    top: 0;
-    left: 0;
+    /* top: 0;
+    left: 0; */
     position: fixed;
     width: 100vw;
     height: 100vh;
@@ -24,4 +24,21 @@
     z-index: 1;
     background: rgba(0, 0, 0, .7);
     cursor: default;
+}
+
+.about-info {
+    min-width: 300px;
+    color: white;
+    margin: 0 auto;
+    margin-top: 10%;
+    width: 85%;
+    text-align: center;
+    max-width: 500px;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+a {
+
+    color: white;
 }

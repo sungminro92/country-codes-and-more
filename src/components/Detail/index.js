@@ -65,9 +65,9 @@ const Detail = ({ flag, country, toggleDetailPage, handleRandomCountry }) => {
                     {/* <img src={flag} alt={flag} /> */}
                     <img src={selectedCountry.flag} alt="flag image" />
                     <p className="main-font big-font" >{country.countryName.toUpperCase()}</p>
-                    <p className="sub-font medium-font">"{selectedCountry.alpha2Code} / {selectedCountry.alpha3Code}"</p>
+                    <p className="sub-font medium-font">"{selectedCountry.alpha2Code} / {selectedCountry.alpha3Code} / {selectedCountry.numericCode}"</p>
                     <p className="sub-font small-font"><IoLocationSharp color="white" size={25} />{selectedCountry.region} / {selectedCountry.subregion}</p>
-                    <p className="sub-font small-font">their population is about <em>{selectedCountry.population}</em>, has currency in <em>{selectedCountry.currencies[0].name}</em> | <em>{selectedCountry.currencies[0]?.code}</em> | <em>{selectedCountry.currencies[0].symbol}</em>, currently living in <em>{selectedCountry?.timezones[0]}</em>, and uses <em>{selectedCountry?.topLevelDomain[0]}</em> as their tld.</p>
+                    <p className="sub-font small-font">their population is about <em>{selectedCountry.population}</em>, has currency in <em>{selectedCountry.currencies[0].name}</em> | <em>{selectedCountry.currencies[0]?.code}</em> | <em>{selectedCountry.currencies[0].symbol}</em>, currently living in <em>{selectedCountry?.timezones[0]}</em>, can be called with <em>+{selectedCountry.callingCodes}</em>, and uses <em>{selectedCountry?.topLevelDomain[0]}</em> as their tld.</p>
                     {/* <p className="sub-font small-font">ountry currency:  /  / {selectedCountry.currencies[0].symbol}</p> */}
                     {/* <p className="sub-font small-font">timezone: {selectedCountry?.timezones[0]}</p>
                     <p className="sub-font small-font">tld: </p> */}
